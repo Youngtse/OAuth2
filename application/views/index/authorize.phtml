@@ -1,0 +1,54 @@
+<!--<form method="post">-->
+<!--    <label>Do You Authorize TestClient?</label><br />-->
+<!--    <input type="submit" name="authorized" value="yes">-->
+<!--    <input type="submit" name="authorized" value="no">-->
+<!--</form>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>微招聘授权页</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="logo">
+        <a href="http://zhaopin.weibo.com" target="_blank"><img height="64px" src="/img/logo_n.png"></a>
+        <div class="user">
+            <img width="38" height="38" src="<?= $user->logo; ?>">
+            <div class="username">
+                <p class="p-font"><?= $user->name; ?></p>
+            </div>
+        </div>
+    </div>
+    <form method="post">
+        <input type="hidden" name="user_id" value="<?= $user_id; ?>">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <img src="<?= $client->logo; ?>" />
+                <div class="company">
+                    <a href="<?= $client->homepage; ?>" target="_blank"><?= $client->name; ?></a>
+                    <p>公司主页: <?= $client->homepage; ?></p>
+                </div>
+            </div>
+            <div class="panel-body">
+                <h4>将授权<a href="<?= $client->homepage; ?>" target="_blank"><?= $client->name; ?></a>进行以下操作:</h4>
+                <ul>
+                    <li>获取公司信息</li>
+                    <li>发布、修改微招聘上的职位</li>
+                    <li>获取人选及相似人选</li>
+                    <li>接受职位投递的简历</li>
+                </ul>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-danger" type="submit" name="authorized" value="yes">确认授权</button>
+                <button class="btn btn-default" type="submit" name="authorized" value="no">取消</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

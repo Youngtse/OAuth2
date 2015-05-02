@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>微招聘授权页</title>
+</head>
+<body>
+<p><?= $e; ?></p><br>
+<button type="button" onclick="toWeibo()">更换账号</button>
+<button type="button" onclick="refresh()">刷新重试</button>
+<script type="text/javascript">
+    var toWeibo = function () {
+        window.open('http://weibo.com');
+    };
+    var refresh = function () {
+        window.location.reload();
+    };
+</script>
+</body>
+</html>
